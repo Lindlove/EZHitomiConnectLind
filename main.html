@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<h1>EZHitomiConnectLind</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZHitomiConnectLind</title>
+    <style>
+        input {
+          width: 150px; /* 너비 설정 */
+          height: 50px; /* 높이 설정 */
+          color: rgba(0, 0, 0, 100);
+          font-size: 15px;
+        }
+        button {   
+          width: 75px; /* 너비 설정 */
+          height: 50px; /* 높이 설정 */
+          font-size: 15px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="textBox" placeholder="품번">
+    <button id="btn">연결</button>
+
+    <script>
+        const textBox = document.querySelector('#textBox');
+        const btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', () => {
+          const textBoxValue = textBox.value;
+          if (textBoxValue && !isNaN(textBoxValue)) {
+            window.location.href = `https://hitomi.la/galleries/${textBoxValue}.html`;
+          } else {
+            alert("품번(숫자)를 입력해주세요.");
+          }
+        });
+    </script>
+</body>
+<footer>
+<h4>Made by Lin_d777 / discord:lin_d777, github:Lindlove</h4>
+</footer>
+</html>
